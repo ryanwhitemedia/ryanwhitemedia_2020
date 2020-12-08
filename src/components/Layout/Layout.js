@@ -1,14 +1,14 @@
+// @flow
+
 import React from 'react';
-import PropTypes from 'prop-types';
-import checkProps from '@jam3/react-check-extra-props';
-import dynamic from 'next/dynamic';
 
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 
-const RotateScreen = dynamic(() => import('../RotateScreen/RotateScreen'), { ssr: false });
+type Props = { children: React$MixedElement };
 
-function Layout({ children }) {
+function Layout(props: Props): React$MixedElement {
+  const { children } = props;
   return (
     <>
       <Nav />
@@ -16,16 +16,8 @@ function Layout({ children }) {
       {children}
 
       <Footer />
-
-      <RotateScreen />
     </>
   );
 }
-
-Layout.propTypes = checkProps({
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired
-});
-
-Layout.defaultProps = {};
 
 export default Layout;

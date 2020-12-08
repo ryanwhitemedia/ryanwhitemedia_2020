@@ -1,10 +1,22 @@
-export default {
-  Landing: {
+// @flow
+
+export type RouteType = {
+  path: string,
+  title: string
+};
+
+export type RoutesType = Array<{
+  path: string,
+  title: string
+}>;
+
+export default ([
+  {
     path: '/',
     title: 'Home'
   },
-  About: {
+  {
     path: '/about/',
     title: 'About'
   }
-};
+]: RoutesType);

@@ -13,6 +13,7 @@
   "scripts": {
     "dev": "cross-env BUILD_ENV=development next dev",
     "start": "next start",
+    "flow": "flow",
     "\n ######################  NPM Secondary Pipeline  ######################": "",
     "build:ssr": "next build",
     "build:prod:static": "next build && next export && cross-env CI_ENV=production npm-run-all robots-txt-generator sitemap-generator",
@@ -54,6 +55,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
+    "@babel/preset-flow": "^7.12.1",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@jam3/react-check-extra-props": "^1.0.1",
@@ -93,6 +95,8 @@
     "eslint-plugin-react": "7.20.6",
     "eslint-plugin-react-hooks": "^4.0.8",
     "eslint-plugin-standard": "4.0.1",
+    "flow-bin": "^0.138.0",
+    "flow-remove-types": "^2.138.0",
     "generate-robotstxt": "^8.0.3",
     "husky": "^4.2.5",
     "imagemin-gifsicle": "7.0.0",
